@@ -1,0 +1,20 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mainHeader {
+  display: flex;
+  flex-direction: column;
+  font: 700 8rem 'Poppins', sans-serif;
+  letter-spacing: 0.37rem;
+  text-transform: uppercase;
+}
+
+.subheading {
+  text-align: center;
+  font: 500 2rem 'Roboto Mono', monospace;
+  letter-spacing: 0.25rem;
+}

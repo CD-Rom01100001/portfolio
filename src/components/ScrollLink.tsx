@@ -7,7 +7,7 @@ const ScrollLink: FC = () => {
     <div className={css.scrollLink}>
       <a href="#next-section" className={`${css.scrollDown} ${css.pageLink}`}>
         <svg width="24" height="40" viewBox="0 0 24 40" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="22" height="38" rx="11" stroke="#fff" stroke-width="2" fill="none"/>
+          <rect x="1" y="1" width="22" height="38" rx="11" stroke="#fff" strokeWidth="2" fill="none"/>
           <polygon points="12,28 8,24 16,24" fill="#fff">
             <animateTransform
               attributeName="transform"

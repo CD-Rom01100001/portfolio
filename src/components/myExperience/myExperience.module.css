@@ -1,0 +1,17 @@
+.myExperience {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.experienceTitle {
+  margin-bottom: 3rem;
+  text-align: center;
+  font: 600 7rem/7rem 'Poppins', sans-serif;
+}
+
+.wrapWorkHistory {
+  display: flex;
+}

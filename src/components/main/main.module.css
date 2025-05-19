@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1044px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.blockHeader {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.mainHeader {
+  display: flex;
+  flex-direction: column;
+  font: 700 6vw 'Poppins', sans-serif;
+  letter-spacing: 0.37rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1500px) {
+  .mainHeader {
+    font-size: 9rem;
+  }
+}
+
+.subheading {
+  text-align: center;
+  font: 500 2rem 'Roboto Mono', monospace;
+  letter-spacing: 0.25rem;
+}

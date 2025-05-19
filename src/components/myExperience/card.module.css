@@ -1,0 +1,58 @@
+.cardWrap {
+  flex: 1;
+  margin-left: -1px;
+}
+
+.card {
+  padding: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  min-height: 31rem;
+}
+
+.blockTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  min-height: 9rem;
+}
+
+.titleCard, .titleCardTop {
+  font: 600 2.5rem/3rem 'Poppins', sans-serif;
+}
+
+.titleCardTop {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.titleCardTop:after {
+  content:'';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 0.7rem;
+}
+
+.one:after {
+  content:'';
+  background: #DF058D;
+}
+
+.two:after {
+  content:'';
+  background: #2C49D8;
+}
+
+.three:after {
+  content:'';
+  background: #FF6B2B;
+}
+
+.descriptionCard {
+  word-spacing: 5px;
+  font: 500 1.8rem/2.5rem 'Roboto', monospace;
+}

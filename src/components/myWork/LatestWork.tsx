@@ -1,5 +1,4 @@
 import { FC, useState  } from 'react';
-import videoFile from '../../assets/video/video_demonstration.mp4'
 import css from './latestWork.module.css'
 import FadeInSection from '../../utils/FadeInSection';
 
@@ -33,7 +32,7 @@ const LatestWork: FC = () => {
       <div className={`${css.blockVideo} ${isZoomed ? css.zoomed : ''}`}>
         <video 
           className={css.video} 
-          src={videoFile} 
+          src='/assets/video/video_demonstration.mp4' 
           autoPlay 
           loop 
           muted 

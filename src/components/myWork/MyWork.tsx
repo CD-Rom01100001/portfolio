@@ -2,6 +2,7 @@ import { FC } from 'react';
 import LatestWork from './LatestWork';
 import css from './myWork.module.css'
 import FadeInSection from '../../utils/FadeInSection';
+import AllWorks from './AllWorks';
 
 const MyWork: FC = () => {
 
@@ -11,6 +12,7 @@ const MyWork: FC = () => {
         <h2 className={css.myWorkTitle}>My Works</h2>
       </FadeInSection>
       <LatestWork/>
+      <AllWorks/>
     </div>
   );
 }

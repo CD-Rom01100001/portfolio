@@ -23,3 +23,5 @@ src/components/myWork/LatestWork.tsx
 src/components/myWork/latestWork.module.css
 src/components/myWork/AllWorks.tsx
 src/components/myWork/allWorks.module.css
+src/components/myWork/WorkFilter.tsx
+src/components/myWork/workFilter.module.css

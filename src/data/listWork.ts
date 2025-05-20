@@ -22,7 +22,7 @@ const getImage = (prefix: string, count: number): string[] => {
   return arr
 }
 
-const allProjects: ProjectType[] = [
+export const allProjects: ProjectType[] = [
   {
     title: 'Momentum',
     description: 'Momentum - аналог одноимённого приложения интернет-магазина Chrome. Приложение показывает время и имя пользователя. Фоновое изображение и приветствие меняются в зависимости от времени суток. В приложении есть часы, слайдер изображений, виджеты погоды, аудиоплеер, блок цитата дня, настройки. Для хранения имени пользователя и населённого пункта используется локальное хранилище - local storage',

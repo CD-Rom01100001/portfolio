@@ -1,23 +1,31 @@
 import { FC } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { listWork } from '../../data/listWork';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { listWork, allProjects } from '../../data/listWork';
 import WorkFilter from './WorkFilter';
 
 import css from './allWorks.module.css'
+import SelectedWork from '../../pages/SelectedWork';
 
 const AllWorks: FC = () => {
 
-console.log(listWork[0].projects[0].siteScreenshots[0])
+  const location = useLocation()
+  const selectedWork = listWork.find(elem => elem.path.includes(location.pathname))?.projects
+  console.log(selectedWork)
 
   return (
     <div className={css.allWorks}>
-      <ul>
+      <nav className={css.navigateWork}>
         {listWork.map(link => {
           return (
-            <WorkFilter path={link.path} nameLink={link.language}/>
+            <WorkFilter path={link.path} nameLink={link.language} key={link.path}/>
           )
         })}
-      </ul>
+      </nav>
+      <Routes>
+        <Route index element={<SelectedWork data={allProjects}/>}/>
+        <Route path='/js' element={<SelectedWork data={selectedWork}/>}/>
+        <Route path='/react' element={<SelectedWork data={selectedWork}/>}/>
+      </Routes>
     </div>
   );
 }

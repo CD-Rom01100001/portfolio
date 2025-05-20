@@ -1,5 +1,8 @@
-src/components
+src/pages
+src/pages/SelectedWork.tsx
+src/pages/selectedWork.module.css
 
+src/components
 src/components/AnimatedBackground.tsx
 
 src/components/main/

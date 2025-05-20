@@ -10,9 +10,7 @@ interface WorkFilterProps {
 const WorkFilter: FC<WorkFilterProps> = ({path, nameLink}) => {
 
   return (
-    <li className={css.workFilter}>
-      <NavLink to={path} className={css.workLink}>{nameLink}</NavLink>
-    </li>
+    <NavLink to={path} className={css.workLink}>{nameLink}</NavLink>
   );
 }
 

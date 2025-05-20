@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+
+import React, { useRef, useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import './FadeInSection.css';
 
@@ -9,12 +10,14 @@ interface Props {
 
 const FadeInSection: React.FC<Props> = ({ children, delay = 0 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true, margin: '0px 0px -10% 0px' });
   const controls = useAnimation();
 
-  if (isInView) {
-    controls.start({ opacity: 1, y: 0 });
-  }
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [inView, controls]);
 
   return (
     <motion.div

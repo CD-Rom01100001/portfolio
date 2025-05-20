@@ -1,0 +1,35 @@
+.workLink {
+  position: relative;
+  display: inline-block;
+  margin-right: 2rem;
+  padding-right: 2rem;
+  font: 600 1.6rem/2rem 'Roboto', monospace;
+  color: #BBBABB;
+  transition: color 0.2s ease;
+}
+
+.workLink::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: #BBBABB;
+  transition: width 0.3s ease;
+}
+
+.workLink:hover::before {
+  width: 100%;
+}
+
+.workLink::after {
+  content: '/';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.active {
+  color: #66d9ed;
+}

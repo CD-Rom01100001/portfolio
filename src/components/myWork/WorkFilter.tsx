@@ -7,10 +7,15 @@ interface WorkFilterProps {
   nameLink: string
 }
 
-const WorkFilter: FC<WorkFilterProps> = ({path, nameLink}) => {
+  type ActiveType = {
+    isActive: boolean
+  }
 
+const setActive = ({isActive}: ActiveType): string => isActive ? css.active : ''
+
+const WorkFilter: FC<WorkFilterProps> = ({path, nameLink}) => {
   return (
-    <NavLink to={path} className={css.workLink}>{nameLink}</NavLink>
+    <NavLink to={path} className={(props) => `${css.workLink} ${setActive(props)}`}>{nameLink}</NavLink>
   );
 }
 

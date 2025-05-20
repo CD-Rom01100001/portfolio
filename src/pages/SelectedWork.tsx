@@ -32,8 +32,8 @@ const itemVariants = {
     scale: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      delay: i * 0.1, // поочерёдное исчезновение
+      duration: 0.2,
+      delay: i * 0.1, // поочерёдное появление
     },
   }),
   exit: (i: number) => ({
@@ -41,7 +41,7 @@ const itemVariants = {
     scale: 0.9,
     y: 30,
     transition: {
-      duration: 0.3,
+      duration: 0.2,
       delay: i * 0.1, // поочерёдное исчезновение
     },
   }),

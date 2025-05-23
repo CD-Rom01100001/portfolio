@@ -16,10 +16,75 @@
   }
 }
 
+.card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 30rem;
+  padding-bottom: 2rem;
+  background: rgba(35, 35, 40, 0.5);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s, font-size 0.3s ease 0.1s;
+  pointer-events: none; /* чтобы не мешали кликам */
+}
+
+.card::after {
+  content: 'Show more';
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  font: 600 0 / 0 'Roboto', monospace;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.card::before {
+  content: '';
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.card:hover::before,
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover::after {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .blockImage {
   width: 100%;
+  overflow: hidden;
 }
 
 .image {
   width: 100%;
+  transition: all 0.5s ease;
+}
+
+.nameProject {
+  margin-left: 2rem;
+  font: 600 1.6rem / 2.5rem 'Roboto', monospace;
 }

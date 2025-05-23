@@ -26,15 +26,19 @@ li {
 }
 
 .blockVideo {
+  position: relative;
+  z-index: 1000;
+  transform-origin: right center;
   transition: transform 0.3s ease;
   cursor: pointer;
-  margin-bottom: 5rem;
+}
+
+.zoomed {
+  transform-origin: right center;
+  transform: scale(2);
 }
 
 .video {
   width: 100%;
 }
 
-.zoomed {
-  transform: scale(2);
-}

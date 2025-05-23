@@ -67,11 +67,13 @@ const SelectedWork: FC<SelectedWorkProps> = ({ data }) => {
           exit="exit"
           layout
         >
-          <div className={css.blockImage}>
-            <img src={p.siteScreenshots[0]} alt={p.title} className={css.image} />
-          </div>
-          <div className={css.blockNameProject}>
-            <h3 className={css.nameProject}>{p.title}</h3>
+          <div className={css.card}>
+            <div className={css.blockImage}>
+              <img src={p.siteScreenshots[0]} alt={p.title} className={css.image} />
+            </div>
+            <div className={css.blockNameProject}>
+              <h3 className={css.nameProject}>{p.title}</h3>
+            </div>
           </div>
         </motion.div>
       ))}

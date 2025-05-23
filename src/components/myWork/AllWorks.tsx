@@ -7,6 +7,7 @@ import SelectedWork from '../../pages/SelectedWork';
 import FadeInSection from '../../utils/FadeInSection';
 
 import css from './allWorks.module.css';
+import DescrModal from './DescrModal';
 
 const AllWorks: FC = () => {
   const location = useLocation();
@@ -30,6 +31,8 @@ const AllWorks: FC = () => {
           <Route path="/react" element={<SelectedWork data={selectedWork} key="react" />} />
         </Routes>
       </AnimatePresence>
+
+      <DescrModal data={selectedWork}/>
     </div>
   );
 };

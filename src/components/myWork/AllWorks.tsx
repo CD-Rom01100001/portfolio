@@ -1,15 +1,20 @@
 import { FC } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { listWork, allProjects } from '../../data/listWork';
 import WorkFilter from './WorkFilter';
 import SelectedWork from '../../pages/SelectedWork';
 import FadeInSection from '../../utils/FadeInSection';
-
-import css from './allWorks.module.css';
 import DescrModal from './ModalWindow/DescrModal';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { setActiveBlock } from '../../store/slices/activeBlockSlice';
+import css from './allWorks.module.css';
 
 const AllWorks: FC = () => {
+
+  const activeBlock = useAppSelector(state => state.activeBlock.activeBlock)
+  const dispatch = useAppDispatch()
+
   const location = useLocation();
   const selectedWork = listWork.find(elem => elem.path.includes(location.pathname))?.projects;
 
@@ -31,8 +36,20 @@ const AllWorks: FC = () => {
           <Route path="/react" element={<SelectedWork data={selectedWork} key="react" />} />
         </Routes>
       </AnimatePresence>
-
-      <DescrModal data={selectedWork}/>
+<AnimatePresence>
+  {activeBlock && (
+    <motion.div
+      className={css.overlay}
+      onClick={() => dispatch(setActiveBlock(''))}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <DescrModal data={selectedWork} />
+    </motion.div>
+  )}
+</AnimatePresence>
     </div>
   );
 };

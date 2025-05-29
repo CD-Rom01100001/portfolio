@@ -7,7 +7,7 @@ import SelectedWork from '../../pages/SelectedWork';
 import FadeInSection from '../../utils/FadeInSection';
 
 import css from './allWorks.module.css';
-import DescrModal from './DescrModal';
+import DescrModal from './ModalWindow/DescrModal';
 
 const AllWorks: FC = () => {
   const location = useLocation();

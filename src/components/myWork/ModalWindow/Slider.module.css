@@ -1,0 +1,57 @@
+.slider {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: rgba(35, 35, 40, 0.5);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arrow svg path {
+  transition: all 0.2s ease;
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow:hover svg path {
+  fill: #b1b1b1;
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(1);
+}
+
+.arrowLeft {
+  left: 1rem;
+}
+
+.arrowRight {
+  right: 1rem;
+}
+
+.sliderLine {
+  display: flex;
+  height: 100%;
+}
+
+.sliderImage {
+  height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+}

@@ -28,5 +28,8 @@ src/components/myWork/AllWorks.tsx
 src/components/myWork/allWorks.module.css
 src/components/myWork/WorkFilter.tsx
 src/components/myWork/workFilter.module.css
-src/components/myWork/DescrModal.tsx
-src/components/myWork/DescrModal.module.css
+src/components/myWork/ModalWindow/
+src/components/myWork/ModalWindow/DescrModal.tsx
+src/components/myWork/ModalWindow/DescrModal.module.css
+src/components/myWork/ModalWindow/Slider.tsx
+src/components/myWork/ModalWindow/Slider.module.css

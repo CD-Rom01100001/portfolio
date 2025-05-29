@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { useAppDispatch } from '../store/hooks';
+import { setActiveBlock } from '../store/slices/activeBlockSlice';
 import type { ProjectType } from '../data/listWork';
 import { motion } from 'framer-motion';
 import css from './selectedWork.module.css';
@@ -41,6 +43,9 @@ const itemVariants = {
 };
 
 const SelectedWork: FC<SelectedWorkProps> = ({ data }) => {
+
+  const dispatch = useAppDispatch()
+
   return (
     <motion.div
       className={css.selectedWork}
@@ -60,7 +65,7 @@ const SelectedWork: FC<SelectedWorkProps> = ({ data }) => {
           exit="exit"
           layout
         >
-          <div className={css.card} onClick={()=>console.log(p.title)}>
+          <div className={css.card} onClick={()=>dispatch(setActiveBlock(p.title))}>
             <div className={css.blockImage}>
               <img src={p.siteScreenshots[0]} alt={p.title} className={css.image} />
             </div>

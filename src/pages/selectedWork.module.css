@@ -72,16 +72,22 @@
   font-size: 2.2rem;
   line-height: 2.8rem;
   transform: translate(-50%, -50%) scale(1);
-  
 }
 
 .blockImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  max-width: 70rem;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
 .image {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: all 0.5s ease;
 }
 

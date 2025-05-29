@@ -12,10 +12,14 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
 
   /* получаем имя активной карточки */
   const activeBlock = useAppSelector(state => state.activeBlock.activeBlock)
+  
   /* на основании активной карточки формируем массив с объектами [{src: '/path/', id: 1}] */
   const activeBlockImages = data?.find((elem, i) => 
     elem.title.includes(activeBlock))
     ?.siteScreenshots.map((src, i) => ({src, id: i+1}))
+
+  /* если нет изображений, не рендерим модалку */
+  if (!activeBlockImages || activeBlockImages.length === 0) return null
 
   return (
     <div className={css.descrModal}>

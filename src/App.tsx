@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import AnimatedBackground from './components/AnimatedBackground';
 import Main from './components/main/Main';
 import MyExperience from './components/myExperience/MyExperience';
 import MyWork from './components/myWork/MyWork';
+import Contact from './components/contact/Contact';
 
 import './App.css';
-
 
 function App() {
 
@@ -30,6 +30,9 @@ function App() {
           </section>
           <section>
             <MyWork/>
+          </section>
+          <section>
+            <Contact/>
           </section>
         </main>
         <footer></footer>

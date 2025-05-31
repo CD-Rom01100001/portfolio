@@ -21,7 +21,7 @@ export const myExperienceList: CardType[] = [
   {
     title: 'Frontend Dev',
     subtitle: 'React',
-    description: 'Применяю UI/UX-подход. Более 3 лет опыта разработки на HTML, CSS, JS и 1 год разработки на React + Redux.',
+    description: 'Применяю UI/UX-подход. Более 2 лет опыта разработки на HTML, CSS, JS и 1 год разработки на React + TS + Redux.',
     icon: mdiReact,
     cName: 'two',
     id: 2

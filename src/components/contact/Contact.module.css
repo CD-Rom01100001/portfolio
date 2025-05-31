@@ -1,0 +1,16 @@
+.contactTitle {
+  margin-bottom: 4rem;
+  text-align: center;
+  font: 600 6rem/7rem 'Poppins', sans-serif;
+  text-transform: uppercase;
+}
+
+.formBlock form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+}
+
+button {
+  align-self: flex-start;
+}

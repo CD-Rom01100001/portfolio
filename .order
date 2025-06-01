@@ -33,3 +33,9 @@ src/components/myWork/ModalWindow/DescrModal.tsx
 src/components/myWork/ModalWindow/DescrModal.module.css
 src/components/myWork/ModalWindow/Slider.tsx
 src/components/myWork/ModalWindow/Slider.module.css
+
+src/components/contact
+
+src/components/Footer
+src/components/Footer/Footer.tsx
+src/components/Footer/Footer.module.css

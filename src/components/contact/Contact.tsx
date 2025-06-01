@@ -49,25 +49,40 @@ const Contact: FC<ContactProps> = ({}) => {
 
   return (
     <div className={css.contact}>
-      {/* <FadeInSection delay={0.2}> */}
+      <FadeInSection >
       <div className={css.titleWrap}>
         <h2 className={css.contactTitle}>contacts</h2>
       </div>
-      {/* </FadeInSection> */}
+      </FadeInSection>
 
-      <div className={css.ctaTextBlock}>
-        <p className={css.ctaText}>
-          If you have any questions or suggestions, please contact me.
-        </p>
-      </div>
-
+      <FadeInSection delay={0.1}>
+        <div className={css.ctaTextBlock}>
+          <p className={css.ctaText}>
+            If you have any questions or suggestions, please contact me.
+          </p>
+        </div>
+      </FadeInSection>
 
       <form onSubmit={handleSubmit} className={css.formBlock}>
-        <input type="text" name="name" placeholder='Name' required />
-        <input type="email" name="email" placeholder='Enter your e-mailEnter your e-mail address for feedback' required />
-        <textarea name="message" rows={4} placeholder='Enter your message' required />
+        <FadeInSection delay={0.2}>
+          <input type="text" name="name" placeholder='Name' required />
+        </FadeInSection>
+
+        <FadeInSection delay={0.3}>
+          <input type="email" name="email" placeholder='Enter your e-mail address for feedback' required />
+        </FadeInSection>
+
+        <FadeInSection delay={0.4}>
+          <textarea name="message" rows={4} placeholder='Enter your message' required />
+        </FadeInSection>
+
         <input type="hidden" name="_captcha" value="false" />
-        <button type="submit" className={css.button} disabled={isLoading}>Submit</button>
+
+        <FadeInSection delay={0.5} >
+          <div className={css.btnWuap}>
+            <button type="submit" className={css.button} disabled={isLoading}>Submit</button>
+          </div>
+        </FadeInSection>
 
         <p className={css.alert} style={{ 
           color: message === 'sent' ? '#1BC41D' : 

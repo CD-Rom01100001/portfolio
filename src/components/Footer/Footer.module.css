@@ -1,3 +1,24 @@
 .footer {
-  
+  padding: 5rem 0;
+  background: rgba(26, 25, 29, 0.8);
+}
+
+.contactsMethodsBlock {
+  display: flex;
+  justify-content: center;
+  gap: 0 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.copyrightBlock {
+  text-align: center;
+}
+
+.copyrightBlock p {
+  font: 300 1.3rem/2rem 'Poppins', sans-serif;
+  color: #8f9aa7;
+}
+
+.copyrightBlock span {
+  color: #04c2c9;
 }

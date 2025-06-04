@@ -39,3 +39,5 @@ src/components/contact
 src/components/Footer
 src/components/Footer/Footer.tsx
 src/components/Footer/Footer.module.css
+src/components/Footer/Icon.tsx
+src/components/Footer/Icon.module.css

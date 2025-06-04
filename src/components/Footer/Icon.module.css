@@ -1,0 +1,54 @@
+.icon a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: #2E2C36;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.icon a:hover {
+  background: #06B6BD;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.icon a svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* отключаем анимацию по умолчанию */
+.icon a svg:nth-child(2) {
+  transition: none
+}
+
+.icon a svg path {
+  fill: #fff;
+}
+
+.icon a svg:nth-child(2) {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* при наведении - применяем плавный переход */
+.icon a:hover svg:nth-child(1),
+.icon a:hover svg:nth-child(2) {
+  transition: all 0.3s ease;
+}
+
+.icon a:hover svg:nth-child(1) {
+  transform: translateY(200%);
+}
+
+.icon a:hover svg:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

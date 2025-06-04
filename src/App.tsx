@@ -8,6 +8,7 @@ import MyWork from './components/myWork/MyWork';
 import Contact from './components/contact/Contact';
 
 import './App.css';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -35,7 +36,9 @@ function App() {
             <Contact/>
           </section>
         </main>
-        <footer></footer>
+        <footer>
+          <Footer/>
+        </footer>
       </div>
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@ interface ActiveBlockState {
 }
 
 const initialState: ActiveBlockState = {
-  activeLanguage: 'RU',
+  activeLanguage: 'EN',
 }
 
 const activeLanguageSlice = createSlice({

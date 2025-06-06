@@ -2,19 +2,16 @@ import { FC } from 'react';
 
 import ScrollLink from './ScrollLink';
 import FadeInSection from '../../utils/FadeInSection';
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
-// import { setActiveLanguage } from '../../store/slices/languageSlice';
+import { useAppSelector } from '../../store/hooks';
 
 import css from './main.module.css'
 
 const Main: FC = () => {
 
-    const language = useAppSelector(state => state.activeLanguage.activeLanguage)
-    // const dispatch = useAppDispatch()
+  const language = useAppSelector(state => state.activeLanguage.activeLanguage)
 
   return (
     <div className={css.main}>
-      {/* <div className={css.language} onClick={()=>dispatch(setActiveLanguage())}>{language}</div> */}
       <div className={css.blockHeader}>
         <FadeInSection>
         <h1 className={css.mainHeader}>

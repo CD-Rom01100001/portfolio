@@ -11,28 +11,28 @@ body {
 }
 
 .app {
-  margin: 0 auto;
+  
 }
 
-.contentWrap {
+.content-wrap {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   max-width: 1044px;
-  /* height: 100vh; */
   margin: 0 auto;
 }
 
 .language {
-  position: sticky;
+  position: fixed;
   top: 2rem;
   z-index: 2000;
   align-self: flex-end;
   margin-right: 2rem;
+  padding: 0.5rem;
   font: 400 1.6rem/2rem 'Poppins', sans-serif;
-  text-shadow: 0 0 2px #000;
+  background: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
 }

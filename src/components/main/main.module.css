@@ -34,8 +34,8 @@
 .mainHeader {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  font: 700 6vw 'Poppins', sans-serif;
+  align-items: center;
+  font: 700 5vw 'Poppins', sans-serif;
   letter-spacing: 0.37rem;
   text-align: center;
   text-transform: uppercase;

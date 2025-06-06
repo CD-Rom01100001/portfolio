@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <div className="app">
 
-        <div className="contentWrap">
+        <div className="content-wrap">
 
           <div className="language" onClick={()=>dispatch(setActiveLanguage())}>{language}</div>
           <AnimatedBackground />

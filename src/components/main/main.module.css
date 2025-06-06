@@ -1,11 +1,28 @@
 .main {
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: 1044px;
+  width: 100%;
   height: 100vh;
-  margin: 0 auto;
+}
+
+.language {
+  position: sticky;
+  top: 2rem;
+  align-self: flex-end;
+  font: 400 1.6rem/2rem 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language:hover {
+  transform: scale(1.1);
+}
+
+.language:active {
+  transform: scale(1);
 }
 
 .blockHeader {
@@ -17,8 +34,10 @@
 .mainHeader {
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
   font: 700 6vw 'Poppins', sans-serif;
   letter-spacing: 0.37rem;
+  text-align: center;
   text-transform: uppercase;
 }
 

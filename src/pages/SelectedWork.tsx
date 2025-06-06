@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useAppDispatch } from '../store/hooks';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { setActiveBlock } from '../store/slices/activeBlockSlice';
 import type { ProjectType } from '../data/listWork';
 import { motion } from 'framer-motion';
@@ -44,6 +44,7 @@ const itemVariants = {
 
 const SelectedWork: FC<SelectedWorkProps> = ({ data }) => {
 
+  const language = useAppSelector(state => state.activeLanguage.activeLanguage)
   const dispatch = useAppDispatch()
 
   return (
@@ -73,6 +74,9 @@ const SelectedWork: FC<SelectedWorkProps> = ({ data }) => {
               <h3 className={css.nameProject}>{p.title}</h3>
               <p className={css.language}>{p.lang}</p>
             </div>
+            <span className={css.showMore}>
+              {language === 'RU' ? 'Подробнее' : 'Show more'}
+            </span>
           </div>
         </motion.div>
       ))}

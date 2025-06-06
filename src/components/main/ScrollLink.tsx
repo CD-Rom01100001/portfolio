@@ -1,7 +1,10 @@
 import { FC } from 'react';
+import { useAppSelector } from '../../store/hooks';
 import css from './scrollLink.module.css'
 
 const ScrollLink: FC = () => {
+
+  const language = useAppSelector(state => state.activeLanguage.activeLanguage)
 
   return (
     <div className={css.scrollLink}>
@@ -17,7 +20,11 @@ const ScrollLink: FC = () => {
               repeatCount="indefinite" />
           </polygon>
         </svg>
-        <span className={css.scrollText}>Scroll Down</span>
+        <span className={css.scrollText}>
+          {language === 'RU' ?
+          <>Прокрутка<br/>Вниз</>:
+          <>Scroll<br/>Down</>}
+        </span>
       </a>
     </div>
   );

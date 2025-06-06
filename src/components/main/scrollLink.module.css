@@ -15,8 +15,6 @@
   bottom: 2rem;
   left: 50%;
   display: inline-block; /* Обеспечивает нормальную область для наведения */
-  width: 6rem;
-  /* padding: 1rem; */
   text-align: center;
   color: #fff;
   text-decoration: none;

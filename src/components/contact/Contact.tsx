@@ -1,13 +1,12 @@
 import { FC, useState } from 'react';
 import FadeInSection from '../../utils/FadeInSection';
+import { useAppSelector } from '../../store/hooks';
 
 import css from './Contact.module.css'
 
-interface ContactProps {
+const Contact: FC = () => {
 
-}
-
-const Contact: FC<ContactProps> = ({}) => {
+  const language = useAppSelector(state => state.activeLanguage.activeLanguage)
 
   const [message, setMessage] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -47,40 +46,95 @@ const Contact: FC<ContactProps> = ({}) => {
     }
   };
 
+  const messages = {
+    'RU': {
+      sending: 'Сообщение отправляется...',
+      sent: 'Сообщение отправлено!',
+      sendingError: 'Ошибка отправки.',
+      error: 'Произошла ошибка.',
+    },
+    'EN': {
+      sending: 'The message goes out...',
+      sent: 'Message sent!',
+      sendingError: 'Send error.',
+      error: 'There was an error.',
+    }
+  };
+
   return (
     <div className={css.contact}>
       <FadeInSection >
       <div className={css.titleWrap}>
-        <h2 className={css.contactTitle}>contacts</h2>
+        <h2 className={css.contactTitle}>
+          {language === 'RU' ?
+            'контакты'
+            :
+            'contacts'
+          }
+          </h2>
       </div>
       </FadeInSection>
 
       <FadeInSection delay={0.1}>
         <div className={css.ctaTextBlock}>
           <p className={css.ctaText}>
-            If you have any questions or suggestions, please contact me.
+            {language === 'RU' ?
+              'Если у вас есть вопросы или предложения, пожалуйста, свяжитесь со мной.'
+              :
+              'If you have any questions or suggestions, please contact me.'
+            }
           </p>
         </div>
       </FadeInSection>
 
       <form onSubmit={handleSubmit} className={css.formBlock}>
         <FadeInSection delay={0.2}>
-          <input type="text" name="name" placeholder='Name' required />
+          <input 
+            type="text"
+            name="name"
+            placeholder={language === 'RU' ?
+              'Введите ваше имя'
+              :
+              'Enter your name'
+            } 
+            required />
         </FadeInSection>
 
         <FadeInSection delay={0.3}>
-          <input type="email" name="email" placeholder='Enter your e-mail address for feedback' required />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder={language === 'RU' ?
+              'Введите адрес электронной почты для обратной связи'
+              :
+              'Enter your e-mail address for feedback'
+            } 
+            required />
         </FadeInSection>
 
         <FadeInSection delay={0.4}>
-          <textarea name="message" rows={4} placeholder='Enter your message' required />
+          <textarea 
+          name="message" 
+          rows={4} 
+          placeholder={language === 'RU' ?
+            'Введите ваше сообщение'
+            :
+            'Enter your message'
+          } 
+          required />
         </FadeInSection>
 
         <input type="hidden" name="_captcha" value="false" />
 
         <FadeInSection delay={0.5} >
           <div className={css.btnWuap}>
-            <button type="submit" className={css.button} disabled={isLoading}>Submit</button>
+            <button type="submit" className={css.button} disabled={isLoading}>
+              {language === 'RU' ?
+                'Отправить'
+                :
+                'Submit'
+              } 
+            </button>
           </div>
         </FadeInSection>
 
@@ -90,15 +144,16 @@ const Contact: FC<ContactProps> = ({}) => {
           '#FFF' 
           }}
         >
-          {isLoading
-            ? 'The message goes out...'
-            : message === 'sent'
-            ? 'Message sent!'
-            : message === 'sending error'
-            ? 'Send error.'
-            : message === 'error'
-            ? 'There was an error.'
-            : ''}
+          {isLoading ? 
+            messages[language].sending :
+            message === 'sent' ? 
+            messages[language].sent : 
+            message === 'sending error' ? 
+            messages[language].sendingError : 
+            message === 'error' ? 
+            messages[language].error : 
+            ''
+          }
         </p>
       </form>
   

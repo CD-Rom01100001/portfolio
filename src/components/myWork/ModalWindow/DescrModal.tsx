@@ -17,6 +17,7 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
 
   /* получаем имя активной карточки */
   const activeBlock = useAppSelector(state => state.activeBlock.activeBlock)
+  const language = useAppSelector(state => state.activeLanguage.activeLanguage)
 
   const dispatch = useAppDispatch()
 
@@ -49,7 +50,11 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
         <div className={css.descrBlock}>
           <h2 className={css.modalTitle}>{existingData.title}</h2>
           <div className={css.description}>
-            <p>{existingData.description}</p>
+            <p>
+              {language === 'RU' ?
+              existingData.description.ru:
+              existingData.description.en}
+            </p>
           </div>
           <div className={css.blockButton}>
             <a href={existingData.siteLink} 
@@ -58,7 +63,9 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
               rel="noreferrer"
             >
               <Icon path={mdiOpenInNew} size={1} color="currentColor" /> 
-              view site
+              {language === 'RU' ?
+              'просмотр сайта':
+              'view site'}
             </a>
           </div>
         </div>

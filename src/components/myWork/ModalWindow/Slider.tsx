@@ -103,8 +103,65 @@ const Slider: FC<SliderProps> = ({ images }) => {
     }
   }
 
+  //* савйпы */
+  const touchStartX = useRef<number | null>(null)// координата X (по горизонтали), где палец коснулся экрана.
+  const touchEndX = useRef<number | null>(null)// координата X, где палец отпустил экран.
+
+  /* Когда пользователь касается экрана */
+  const handleTouchStart = (e: React.TouchEvent) => {
+    /* 
+    - e.touches[0] — массив всех пальцев, касающихся экрана. Нам нужен первый (первый палец)
+    - .clientX — координата по горизонтали
+    - Сохраняем эту координату в touchStartX
+    Пример: если пользователь коснулся экрана в точке X=250px, то touchStartX.current = 250
+    */
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  /* Пока палец движется по экрану */
+  const handleTouchMove = (e: React.TouchEvent) => {
+    /* 
+    - Это обновляет touchEndX на текущую позицию пальца, пока он движется
+    - Нам нужно сохранить последнюю координату пальца
+    - Пример: если палец движется влево и останавливается на X=150px, то touchEndX.current = 150
+    */
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  /* Когда палец отпустили — анализируем свайп */
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return
+
+    const diff = touchStartX.current - touchEndX.current// вычисляем как далеко пользователь провел пальцем
+    const minSwipeDistance = 50// минимальная длина свайпа, чтобы не реагировать на случайные касания
+    console.log(minSwipeDistance)
+    console.log(diff)
+    console.log(Math.abs(diff))
+
+    /* проверяем, что-бы свайп был больше 50 пикселей, чтобы не реагировать на случайные прикосновения */
+    if (Math.abs(diff) > minSwipeDistance) {
+      /* значит палец прошёл влево — надо листать вперёд */
+      if (diff > 0) {
+        moveNext()
+      }
+      /* палец шёл вправо — надо листать назад */ 
+      else {
+        movePrev()
+      }
+    }
+
+    // очистка
+    touchStartX.current = null
+    touchEndX.current = null
+  }
+
   return (
-    <div className={css.slider} ref={sliderRef}>
+    <div 
+      className={css.slider} 
+      ref={sliderRef} 
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}>
 
         <div className={`${css.arrow} ${css.arrowLeft}`} onClick={movePrev}>
           {setArrow('left')}

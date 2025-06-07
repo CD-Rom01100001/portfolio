@@ -18,6 +18,24 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 1024px) {
+  .contactTitle {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactTitle {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .contactTitle {
+    font-size: 10vw;
+  }
+}
+
 .contactTitle::after {
   content: '';
   position: absolute;

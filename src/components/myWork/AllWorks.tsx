@@ -28,7 +28,7 @@ const AllWorks: FC = () => {
         </nav>
       </FadeInSection>
 
-      {/* 🔥 Оборачиваем Routes в AnimatePresence с key */}
+      {/* Оборачиваем Routes в AnimatePresence с key */}
       <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route index element={<SelectedWork data={allProjects} key="all" />} />
@@ -36,20 +36,21 @@ const AllWorks: FC = () => {
           <Route path="/react" element={<SelectedWork data={selectedWork} key="react" />} />
         </Routes>
       </AnimatePresence>
-<AnimatePresence>
-  {activeBlock && (
-    <motion.div
-      className={css.overlay}
-      onClick={() => dispatch(setActiveBlock(''))}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      <DescrModal data={selectedWork} />
-    </motion.div>
-  )}
-</AnimatePresence>
+
+      <AnimatePresence>
+        {activeBlock && (
+          <motion.div
+            className={css.overlay}
+            onClick={() => dispatch(setActiveBlock(''))}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <DescrModal data={selectedWork} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

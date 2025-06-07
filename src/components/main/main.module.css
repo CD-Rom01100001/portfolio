@@ -8,6 +8,13 @@
   height: 100vh;
 }
 
+/* @media (max-width: 1024px) {
+  .main {
+    height: auto;
+  }
+} */
+
+
 .language {
   position: sticky;
   top: 2rem;
@@ -35,15 +42,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font: 700 5vw 'Poppins', sans-serif;
+  font: 700 6vw 'Poppins', sans-serif;
   letter-spacing: 0.37rem;
   text-align: center;
   text-transform: uppercase;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1084px) {
   .mainHeader {
-    font-size: 9rem;
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainHeader {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainHeader {
+    font-size: 10vw;
   }
 }
 

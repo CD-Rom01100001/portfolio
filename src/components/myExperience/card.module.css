@@ -1,12 +1,20 @@
 .cardWrap {
+  display: flex;
   flex: 1;
+  min-height: 31rem;
   margin-left: -1px;
+}
+
+@media (max-width: 924px) {
+  .cardWrap {
+    min-width: 30rem;
+  }
 }
 
 .card {
   padding: 2rem;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  min-height: 31rem;
+  height: 100%;
 }
 
 .blockTitle {

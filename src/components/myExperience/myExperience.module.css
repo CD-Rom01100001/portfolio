@@ -6,14 +6,69 @@
   height: 100vh;
 }
 
+@media (max-width: 1024px) {
+  .myExperience {
+    height: auto;
+    padding-bottom: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .myExperience {
+    padding-bottom: 10rem;
+  }
+}
+
 .experienceTitle {
   margin-bottom: 3rem;
   text-align: center;
   font: 600 7rem/7rem 'Poppins', sans-serif;
 }
 
+@media (max-width: 1024px) {
+  .experienceTitle {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .experienceTitle {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .experienceTitle {
+    font-size: 10vw;
+  }
+}
+
 .wrapWorkHistory {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.jokeBlock {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+@media (max-width: 924px) {
+  .jokeBlock {
+    display: flex;
+  }
+}
+
+@media (max-width: 637px) {
+  .jokeBlock {
+    display: none;
+  }
+}
+
+.jokeBlock p {
+  font: 600 2.5rem/3rem 'Poppins', sans-serif;
+  text-align: center;
 }

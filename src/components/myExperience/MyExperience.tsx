@@ -3,6 +3,7 @@ import { myExperienceList } from '../../data/myExperienceList';
 import Card from './Card';
 import HtmlCodeBlock from './HtmlCodeBlock';
 import { useAppSelector } from '../../store/hooks';
+import FadeInSection from '../../utils/FadeInSection';
 
 import css from './myExperience.module.css'
 
@@ -32,6 +33,22 @@ const language = useAppSelector(state => state.activeLanguage.activeLanguage)
             />
           )
         })}
+        
+        <div className={css.jokeBlock}>
+          <FadeInSection delay={0.4}>
+            <p>
+              {language === 'RU' ? 
+              (
+                <>Ой.<br/>Не хватило блоков!🤷‍♂️</>
+              ) : 
+              (
+                <>Oops.<br/>Not enough blocks!🤷‍♂️</>
+              )
+              }
+            </p>
+          </FadeInSection>
+        </div>
+        
         <HtmlCodeBlock/>
       </div>
     </div>

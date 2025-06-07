@@ -5,6 +5,12 @@
   margin-bottom: 4rem;
 }
 
+@media (max-width: 768px) {
+  .latestWork {
+    flex-direction: column;
+  }
+}
+
 .blockDescription,
 .blockVideo {
   flex: 1;
@@ -14,6 +20,7 @@
   margin-bottom: 2rem;
   word-spacing: 5px;
   font: 500 1.6rem / 2.5rem 'Roboto', monospace;
+  text-align: justify;
 }
 
 .titleList {
@@ -40,5 +47,11 @@ li {
 
 .video {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .video {
+    pointer-events: none;
+  }
 }
 

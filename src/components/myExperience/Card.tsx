@@ -17,17 +17,19 @@ const Card: FC<CardProps> = ({title, subtitle, description, cName, icon, num}) =
   return (
     <div className={css.cardWrap}>
       <FadeInSection delay={Number(`0.${num+1}`)}>
-      <div className={css.card}>
-        <div className={css.blockTitle}>
-          <div className={css.iconWrap}>
-            <Icon path={icon} size={5} color="#fff"/> 
+        <div className={css.card}>
+          <div className={css.blockTitle}>
+            <div className={css.iconWrap}>
+              <Icon path={icon} size={5} color="#fff"/> 
+            </div>
+            <h3 className={css.titleCard}>
+              <span className={`${css.titleCardTop} ${css[cName]}`}>{title}</span>
+              <br/>
+              {subtitle}
+            </h3>
           </div>
-          <h3 className={css.titleCard}>
-            <span className={`${css.titleCardTop} ${css[cName]}`}>{title}</span> {subtitle}
-          </h3>
+          <p className={css.descriptionCard}>{description}</p>
         </div>
-        <p className={css.descriptionCard}>{description}</p>
-      </div>
       </FadeInSection>
     </div>
   );

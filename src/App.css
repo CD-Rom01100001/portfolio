@@ -10,18 +10,20 @@ body {
   color: #fff;
 }
 
-.app {
-  
-}
-
 .content-wrap {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: 1044px;
+  max-width: 104.4rem;
   margin: 0 auto;
+}
+
+@media (max-width: 1084px) {
+  .content-wrap {
+    padding: 0 2rem;
+  }
 }
 
 .language {
@@ -32,7 +34,7 @@ body {
   margin-right: 2rem;
   padding: 0.5rem;
   font: 400 1.6rem/2rem 'Poppins', sans-serif;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
 }

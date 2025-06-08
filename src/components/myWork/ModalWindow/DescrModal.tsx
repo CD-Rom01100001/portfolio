@@ -30,8 +30,6 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
   /* если нет данных или изображений — ничего не рендерим */
   if (!existingData || !activeBlockImages || activeBlockImages.length === 0) return null
 
-  console.log(data)
-
   return (
     <motion.div
       className={css.descrModal}

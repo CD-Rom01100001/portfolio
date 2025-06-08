@@ -20,7 +20,6 @@ function App() {
 
   useEffect(() => {
     document.querySelector('a[href="#next-section"]')?.addEventListener('click', () => {
-      console.log('Scroll link clicked');
     });
   }, []);
 

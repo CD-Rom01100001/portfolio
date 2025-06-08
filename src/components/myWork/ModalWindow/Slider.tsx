@@ -134,9 +134,6 @@ const Slider: FC<SliderProps> = ({ images }) => {
 
     const diff = touchStartX.current - touchEndX.current// вычисляем как далеко пользователь провел пальцем
     const minSwipeDistance = 50// минимальная длина свайпа, чтобы не реагировать на случайные касания
-    console.log(minSwipeDistance)
-    console.log(diff)
-    console.log(Math.abs(diff))
 
     /* проверяем, что-бы свайп был больше 50 пикселей, чтобы не реагировать на случайные прикосновения */
     if (Math.abs(diff) > minSwipeDistance) {

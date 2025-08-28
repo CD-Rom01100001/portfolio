@@ -61,11 +61,21 @@ export const allProjects: ProjectType[] = [
   {
     title: 'Staff Test',
     description: {
-      ru: 'Это интерактивное клиентское приложение для прохождения тестов и тренировки знаний. Разработано с использованием современных технологий фронтенда: React, TypeScript, Redux Toolkit и React Router. Проект ориентирован на пользователей, которые хотят проверять и улучшать свои знания в формате тестирования.',
-      en: 'This is an interactive client application for taking tests and practicing knowledge. It is developed using modern frontend technologies: React, TypeScript, Redux Toolkit and React Router. The project is aimed at users who want to test and improve their knowledge in a testing format.'
+      ru: 'Это интерактивное клиентское приложение для прохождения тестов и тренировки знаний. Разработано с использованием современных технологий фронтенда: React, TypeScript, Redux Toolkit и React Router и бэкенда: Node.js, Express + MongoDB, TypeScript, JWT. Проект предназначен для создания, управления и прохождения тестов, с акцентом на оценку профессиональной пригодности сотрудников юридических лиц, в том числе по навыкам работы с огнестрельным оружием и специальными средствами.',
+      en: 'This is an interactive client application for testing and training knowledge. It was developed using modern front-end technologies: React, TypeScript, Redux Toolkit, and React Router, and back-end technologies: Node.js, Express + MongoDB, TypeScript, and JWT. The project is designed to create, manage, and take tests, with an emphasis on assessing the professional suitability of legal entity employees, including their skills in handling firearms and special equipment.'
     },
-    siteLink: 'https://tests-react-typescript-redux-usfo.vercel.app/',
+    siteLink: 'https://tests-react-typescript-redux-client.onrender.com/',
     siteScreenshots: getImage('staff_test', 3),
+    lang: 'React TS'
+  },
+  {
+    title: 'My Portfolio',
+    description: {
+      ru: 'Это одностраничное приложение, развернутое на собственном домене — https://www.romancherdev.ru. Проект служит визитной карточкой, демонстрируя навыки, опыт и реализованные кейсы в области фронтенд-разработки. Данный проект разработан с использыванием React, TypeScript, Redux Toolkit и React Router. Так-же были использованы CSS-модули и современные CSS-анимации для изолированного стиля и плавных переходов.',
+      en: 'This is a one-page application deployed on its own domain — https://www.romancherdev.ru. The project serves as a business card, demonstrating skills, experience, and completed projects in the field of front-end development. This project was developed using React, TypeScript, Redux Toolkit, and React Router. CSS modules and modern CSS animations were also used for isolated styling and smooth transitions.'
+    },
+    siteLink: 'https://www.romancherdev.ru/',
+    siteScreenshots: getImage('portfolio', 3),
     lang: 'React TS'
   }
 ]

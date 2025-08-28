@@ -11,9 +11,10 @@
   }
 }
 
-.blockDescription,
 .blockVideo {
-  flex: 1;
+  float: right;
+  max-width: 512px;
+  margin: 0 0.5rem 1rem 1rem;
 }
 
 .description {

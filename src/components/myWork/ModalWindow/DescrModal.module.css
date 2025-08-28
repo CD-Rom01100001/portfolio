@@ -70,9 +70,10 @@
 .blockButton {
   display: flex;
   justify-content: end;
+  gap: 2rem;
 }
 
-.blockButton a {
+.blockButton .button {
   display: inline-flex;
   align-items: center;
   gap: 0 1rem;
@@ -81,17 +82,28 @@
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: #b1b1b1;
+  background: transparent;
   border: 2px solid #b1b1b1;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
-.blockButton a:hover {
+.blockButton .button:hover {
   color: #161B20;
   background: #b1b1b1;
 }
 
-.blockButton a:active {
+.blockButton .button:active {
   color: #b1b1b1;
   background: transparent;
+}
+
+.blockButton .disabledLink {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.blockButton .disabledLink:hover {
+  background: none !important;
+  color: #b1b1b1;
 }

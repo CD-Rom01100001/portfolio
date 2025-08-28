@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Icon from '@mdi/react';
-import { mdiOpenInNew } from '@mdi/js';
+import { mdiOpenInNew, mdiGithub } from '@mdi/js';
 import { motion } from 'framer-motion';
 import type { ProjectType } from '../../../data/listWork';
 import Slider from './Slider';
@@ -30,6 +30,8 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
   /* если нет данных или изображений — ничего не рендерим */
   if (!existingData || !activeBlockImages || activeBlockImages.length === 0) return null
 
+  const isDisabled = !existingData.repoLink;
+
   return (
     <motion.div
       className={css.descrModal}
@@ -54,7 +56,9 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
               existingData.description.en}
             </p>
           </div>
+
           <div className={css.blockButton}>
+
             <a href={existingData.siteLink} 
               className={css.button} 
               target='_blank' 
@@ -65,6 +69,31 @@ const DescrModal: FC<DescrModalProps> = ({data}) => {
               'просмотр сайта':
               'view site'}
             </a>
+
+            {isDisabled 
+              ? 
+              <button
+                className={`${css.button} ${css.disabledLink}`} 
+              >
+                <Icon path={mdiGithub} size={1} color="currentColor" /> 
+                {language === 'RU' ?
+                'просмотр репозитория':
+                'view repo'}
+              </button>
+              :
+               <a href={existingData.repoLink} 
+                className={css.button} 
+                target='_blank' 
+                rel="noreferrer"
+              >
+                <Icon path={mdiGithub} size={1} color="currentColor" /> 
+                {language === 'RU' ?
+                'просмотр репозитория':
+                'view repo'}
+              </a>
+            }
+            
+
           </div>
         </div>
       </div>
